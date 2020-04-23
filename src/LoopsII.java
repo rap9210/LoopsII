@@ -203,17 +203,35 @@ public class LoopsII
         Now once our arrays are ready. A for loop to compare each element front to back to see if they are all
         identical. What ever the truth is, display appropriate message.
          */
+        int similarity_count = 0;
         for (i=0; i <= Array.getLength(palindrome_check) - 1; i++)
         {
             if (kcehc_omirdnilap[i].equalsIgnoreCase(palindrome_check[i])) {
-                if (i == Array.getLength(palindrome_check)-1)
-                {
-                    System.out.println("The number you entered, " + num1 + ", is indeed a palindrome.");
-                }
             }
             else {
-                System.out.println("Looks like " + num1 + " is NOT a palindrome.");
+                similarity_count +=1;
+            }
+
+        }
+        if (similarity_count == 0)
+        {
+            System.out.println("The number you entered, " + num1 + ", is indeed a palindrome.");
+        }
+        else{
+            System.out.println("Looks like " + num1 + " is NOT a palindrome.");
+        }
+        //Adding integers that are divisible by 9 between 100 and 200
+        int integer_sum = 0;
+        String int_div_9 = "";
+        for (i = 100; i <= 200; i++)
+        {
+            if (i%9 == 0)
+            {
+                integer_sum += i;
+                int_div_9 += i+" ";
             }
         }
+        System.out.println("The numbers between 100 and 200 that are \ndivisible by 9 are "+int_div_9);
+        System.out.println("Their sum is "+integer_sum);
     }
 }
